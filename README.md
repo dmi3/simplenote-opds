@@ -20,7 +20,7 @@ Read-only of course. For writing, there are more suitable gadgets, obviosly.
 ## Deploy
 
 * Create free [Cloudflare account](https://dash.cloudflare.com/sign-up)
-* Make sure Node [is installed](https://nodejs.org/en/download)
+* Make sure Node.j [is installed](https://nodejs.org/en/download)
 * Edit `wrangler.toml` if you want to limit to specific accounts or change url
 
 ```bash
@@ -49,7 +49,7 @@ In your OPDS client:
     {
         "servers": [{
             "name": "Simplenote",
-            "url": "https://simplenote-opds.`<your-subdomain>`.workers.dev/",
+            "url": "https://simplenote-opds.<your-subdomain>.workers.dev/",
             "username": "<your Simplenote email>",
             "password_obf": ""
         }]
