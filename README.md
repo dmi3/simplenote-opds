@@ -1,8 +1,8 @@
-# simplenote-opds
+# Simplenote Opds
 
 ![](https://developer.run/pic/xteink4-simplenote-200x.png)
 
-# [Blog Post](https://developer.run/83)
+## → Read [Blog Post](https://developer.run/83) ←
 
 A bridge using *free* Cloudflare Worker that serves your Simplenote notes as an OPDS catalog. Browse and read your notes on Xteink X4 (with [CrossPoint](https://crosspointreader.com)), or any other device with an OPDS client (M5Stack Paper S3, Nooks with FBReader etc.).
 
@@ -44,10 +44,18 @@ wrangler deploy
 In your OPDS client:
 
 * You can of couse type directly in CrossPoint → Settings → System → OPDS
-* Or for CrossPoint plug sd card into your pc and edit `.crosspoint/settings.json`:
-    * `"opdsServerUrl": "https://simplenote-opds.`<your-subdomain>`.workers.dev/"`
-    * `"opdsUsername"`: your Simplenote email`
-    * `"opdsPassword_obf"`: is obfuscatied, so you need to type it in  CrossPoint → Settings → System → OPDS → Password
+* Or for CrossPoint plug sd card into your pc and create `.crosspoint/opds.json`:
+    ```
+    {
+        "servers": [{
+            "name": "Simplenote",
+            "url": "https://simplenote-opds.`<your-subdomain>`.workers.dev/",
+            "username": "<your Simplenote email>",
+            "password_obf": ""
+        }]
+    }
+    ```
+* Password is obfuscatied, so you need to type it in  CrossPoint → Settings → System → OPDS → Password
     
 # Features
 
